@@ -6,43 +6,8 @@
   color: #e9c46a;
 }
 
-.background {
-  margin-left: 5em;
-  opacity: .7;
-}
-
-.Login-Form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.Login-Form {
-  width: 420px;
-  box-shadow: #e9c46a;
-  padding: 30px 0 20px;
-  border-radius: 8px;
-  background-color: #86bbd8;
-}
-
-.Login-Form-content {
-  padding: 0 12%;
-}
-
-.Login-Form-title {
-  text-align: center;
-  margin-bottom: 1em;
-  font-size: 24px;
-  color: #330f0a;
-  font-weight: 800;
-}
-
-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #330f0a;
+.background_image {
+    opacity: .7;
 }
 
 
