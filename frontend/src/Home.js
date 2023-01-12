@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import { searchBreweriesByZip } from "./Api";
 
 
+
 function Home() {
     const [breweries, setBreweries] = useState([]);
   
@@ -10,12 +11,13 @@ function Home() {
     searchBreweriesByZip(zipcode).then(data => setBreweries(data));
   }
     return (
-    <div>
-      <h1 className='header'>Welcome to our BarCrawl App</h1>
-      <nav className='navbar'>
+    <div className='container'>
+      <h1 className='Header'>Welcome to our BarCrawl App</h1>
+      <div className='NavbarContainer'>
+      <nav className='Navbar'>
         <ul>
           <li>
-            <a href="/home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="/#">About</a>
@@ -28,6 +30,7 @@ function Home() {
           </li>
         </ul>
       </nav>
+      </div>
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
             <div id='results-container'>

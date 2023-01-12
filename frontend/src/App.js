@@ -5,17 +5,24 @@ import Signup from "./users/Signup"
 import Home from "./Home"
 
 
+
 function App() {
   return ( 
-    
-    <BrowserRouter>
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />}/>
-      </Routes>
-    </BrowserRouter>
-  
+    <div className="App">
+        <div className="background_image">
+          <div className="content-container">
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />}/>
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </div>
+    </div>
+
+
   )
 }
 
