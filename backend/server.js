@@ -15,6 +15,8 @@ app.use(bodyParser.json())
 
 app.use(express.urlencoded({ extended: true }))
 
+// app.use('/users', require('./controllers/user'))
+
 // Listen for Connections
 app.listen(process.env.PORT, () => {
     console.log(`Listening on ${process.env.PORT}`)
