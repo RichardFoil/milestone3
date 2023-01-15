@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
-
+import { useNavigate } from "react-router-dom"
 import '../App.css';
+
 
 function SignUp() {
   const [user, setUser] = useState({
@@ -9,7 +10,9 @@ function SignUp() {
 		email: '',
 		password: ''
 	})
-
+  const [message, setMessage] = useState('')
+  const navigate = useNavigate()
+  
   async function handleSubmit(e) {
     e.preventDefault()
 
@@ -20,7 +23,14 @@ function SignUp() {
         },
         body: JSON.stringify(user)
     })
+    setMessage('Congratulations, you are now signed up!')
   }
+
+  useEffect(() => {
+    if (message) {
+      navigate('/login')
+    }
+  }, [message, navigate])
 
   return (
     <div className="SignupContainer">
