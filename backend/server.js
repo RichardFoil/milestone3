@@ -12,10 +12,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Controllers & Routes
-
-app.use(express.urlencoded({ extended: true }))
-
-// app.use('/users', require('./controllers/user'))
+const usersRouter = require('./controllers/users');
+app.use('/users', usersRouter);
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
