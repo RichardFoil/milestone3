@@ -36,6 +36,7 @@ function Home() {
         </ul>
       </nav>
       </div>
+      <div className='SearchbarContainer'> 
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
               {breweries.length > 0 && 
@@ -50,7 +51,7 @@ function Home() {
           ))}
         </div>
                 }   
-
+        </div>
     </div>
       
       

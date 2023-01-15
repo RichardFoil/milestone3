@@ -15,16 +15,7 @@
   color: #e9c46a;
   
 }
-.Navbar {
-  display: flex;
-  flex-direction: row;
-  
-}
-.navbarContainer{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
+
 .container{
   margin: auto;
 
@@ -56,7 +47,7 @@
 }
 
 .submit-button {
-  background-color: #e9c46a;
+  background-color: rgb(233, 196, 106);
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -70,4 +61,34 @@
   background-color: rgba(134,187,216,.7);
   border-radius: 5px;
   box-shadow: 2px 2px 10px #ddd;
+}
+
+.NavbarContainer {
+  background-color: rgb(233, 196, 106, .7 );
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.Navbar li {
+  margin: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+.SearchbarContainer {
+  display: flex;
+  justify-content: center;
 }
