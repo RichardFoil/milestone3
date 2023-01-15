@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 // Controllers & Routes
 const usersRouter = require('./controllers/users');
 app.use('/users', usersRouter);
+app.use('/authentication', require('./controllers/authentication'))
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { searchBreweriesByZip } from "./Api";
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   const [zipcode, setZipcode] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    searchBreweriesByZip(zipcode);
+    onSearch(zipcode);
   }
 
   return (
