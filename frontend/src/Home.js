@@ -40,7 +40,7 @@ function Home() {
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
               {breweries.length > 0 && 
-        <div className="results-container">
+        <div className="resultsContainer">
           {breweries.map((brewery, index) => (
             <div className="card" key={index}>
               <h2>{brewery.name}</h2>

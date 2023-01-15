@@ -80,15 +80,10 @@
   margin: 0 10px;
 }
 
-
-
-
-
-
-
-
-
 .SearchbarContainer {
   display: flex;
   justify-content: center;
+}
+.resulstContainer{
+  display: block;
 }
