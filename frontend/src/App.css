@@ -3,17 +3,18 @@
 }
 
 .background_image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   background-image: url('https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80');
   background-size: cover;
+  background-repeat: no-repeat;
   
 }
 
 .Header {
   color: #e9c46a;
-  
+  margin: auto;
 }
 
 .container{
@@ -21,19 +22,19 @@
 
 }
 .SignupContainer {
-  width: 10%;
+  width: 10vw;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 10vh;
 }
 .LoginContainer {
-  width: 10%;
+  width: 10vw;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 10vh;
 }
 
 .form-container {
   background-color: rgba(134,187,216,.7);
-  padding: 20px;
+  padding: 2vw;
 }
 
 .form-style {
@@ -49,15 +50,15 @@
 .submit-button {
   background-color: rgb(233, 196, 106);
   color: white;
-  padding: 10px 20px;
+  padding: 1vw 2vh;
   border-radius: 5px;
   border: none;
   margin-top: 20px;
 }
 
 .card {
-  padding: 20px;
-  margin: 20px;
+  padding: 2vw;
+  margin: 2vh;
   background-color: rgba(134,187,216,.7);
   border-radius: 5px;
   box-shadow: 2px 2px 10px #ddd;
@@ -69,6 +70,8 @@
   top: 0;
   display: flex;
   justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .Navbar ul {
@@ -83,7 +86,25 @@
 .SearchbarContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
-.resulstContainer{
-  display: block;
+
+.resultsContainer {
+  position: absolute;
+  top: 60vh;
+  left: 50vw; 
+  transform: translate(-50%, -50%); 
+  display: grid;
+  grid-template-rows: 1fr 1fr; 
+  grid-template-columns: repeat(2, 1fr); 
+  grid-row-gap: 20px; 
+  grid-column-gap: 20px; 
+  justify-content: center; 
+  align-items: center; 
 }
+
+.parentContainer {
+  position: relative;
+}
+
