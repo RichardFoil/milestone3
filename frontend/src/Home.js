@@ -41,23 +41,23 @@ function Home() {
         <SearchBar onSearch={handleSearch} />
               {breweries.length > 0 && 
         <div className="resultsContainer">
+          <div className='card-container'>
           {breweries.map((brewery, index) => (
             <div className="card" key={index}>
               <h2>{brewery.name}</h2>
               <h3>{brewery.brewery_type}</h3>
-              <p>{brewery.street}</p>
-              <p>{brewery.city}</p>
-              <p>{brewery.state}</p>
+              <p>{brewery.street}
+              {brewery.city}
+              {brewery.state}</p>
               <p>{brewery.phone}</p>
               <a href={brewery.website_url}>{brewery.website_url}</a>
             </div>
           ))}
+          </div>
         </div>
                 }   
         </div>
     </div>
-      
-      
     </div>
     
   );

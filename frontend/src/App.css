@@ -9,6 +9,7 @@
   background-image: url('https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80');
   background-size: cover;
   background-repeat: repeat;
+  background-attachment: scroll;
   
 }
 
@@ -92,19 +93,14 @@
 
 .resultsContainer {
   position: absolute;
-  top: 60vh;
-  left: 50vw; 
-  transform: translate(-50%, -50%); 
   display: grid;
-  grid-template-rows: 1fr 1fr; 
-  grid-template-columns: repeat(2, 1fr); 
-  grid-row-gap: 20px; 
-  grid-column-gap: 20px; 
-  justify-content: center; 
-  align-items: center; 
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
 }
 
-.parentContainer {
-  position: relative;
-}
 
