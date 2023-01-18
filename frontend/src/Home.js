@@ -39,8 +39,9 @@ function Home() {
       <div className='SearchbarContainer'> 
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
-              {breweries.length > 0 && 
-        <div className="resultsContainer">
+        </div>
+         <div className="contentContainer">    
+         {breweries.length > 0 && 
           <div className='card-container'>
           {breweries.map((brewery, index) => (
             <div className="card" key={index}>
@@ -53,12 +54,12 @@ function Home() {
               <a href={brewery.website_url}>{brewery.website_url}</a>
             </div>
           ))}
-          </div>
+          </div>} 
         </div>
-                }   
+                  
         </div>
     </div>
-    </div>
+    
     
   );
 }
