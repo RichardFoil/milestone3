@@ -44,7 +44,10 @@ function Home() {
           {breweries.map((brewery, index) => (
             <div className="card" key={index}>
               <h2>{brewery.name}</h2>
-              <p>{brewery.address}</p>
+              <h3>{brewery.brewery_type}</h3>
+              <p>{brewery.street}</p>
+              <p>{brewery.city}</p>
+              <p>{brewery.state}</p>
               <p>{brewery.phone}</p>
               <a href={brewery.website_url}>{brewery.website_url}</a>
             </div>
