@@ -1,13 +1,11 @@
 import { createContext, useState, useEffect } from "react";
 
-
-export const currentUser = createContext()
+export const CurrentUserContext = createContext()
 
 function CurrentUserProvider({ children }){
+    const [currentUser, setCurrentUser] = useState(null)
 
-    const [CurrentUser, setCurrentUser] = useState(null)
     useEffect(() => {
-
         const getLoggedInUser = async () => {
             let response = await fetch('http://localhost:5000/authentication/profile', {
                 headers: {
@@ -20,10 +18,12 @@ function CurrentUserProvider({ children }){
         getLoggedInUser()
     }, [])
     return (
-        <CurrentUserProvider value={{ currentUser, setCurrentUser }}>
+        <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
             {children}
-        </CurrentUserProvider>
+        </CurrentUserContext.Provider>
     )
 }
 
-export default CurrentUserProvider
+export default CurrentUserProvider;
+
+

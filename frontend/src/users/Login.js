@@ -1,39 +1,34 @@
 import '../App.css';
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router"
+import { CurrentUserContext } from '../contexts/CurrentUserProvider'
+
 
 
 function Login() {
-
-    const navigate = useNavigate()
-
-    
-
+    const navigate = useNavigate();
+    const { setCurrentUser } = useContext(CurrentUserContext)
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
-    })
+    });
 
-        
-  
     async function handleSubmit(e) {
-        const response = await fetch(`http://localhost:5000/authentication/login`, {
+        e.preventDefault();
+        const response = await fetch(`http://localhost:5000/authentication/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(credentials)
-        })
-    
-        const data = await response.json()
-    
+        });
+        const data = await response.json();
         if (response.status === 200) {
-            
-            localStorage.setItem('token', data.token)
-            console.log(data.token)
-            navigate(`/`)
+            localStorage.setItem('token', data.token);
+            setCurrentUser(data.user);
+            navigate(`/`);
         } else {
-            navigate('/login')
+            navigate('/login');
         }
     }
 
