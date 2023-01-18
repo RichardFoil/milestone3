@@ -1,16 +1,63 @@
-import React, { useState } from 'react';
 import '../App.css';
+import { useContext, useState } from "react"
+import { useNavigate } from "react-router"
+
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(email, password);
-  }
+    const navigate = useNavigate()
+
+    
+
+    const [credentials, setCredentials] = useState({
+        email: '',
+        password: ''
+    })
+
+        
+  
+    async function handleSubmit(e) {
+        const response = await fetch(`http://localhost:5000/authentication/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+    
+        const data = await response.json()
+    
+        if (response.status === 200) {
+            
+            localStorage.setItem('token', data.token)
+            console.log(data.token)
+            navigate(`/`)
+        } else {
+            navigate('/login')
+        }
+    }
 
   return (
+    <div className='container'>
+      <h1 className='Header'>Welcome to our BarCrawl App</h1>
+      <div className='NavbarContainer'>
+      <nav className='Navbar'>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/#">About</a>
+          </li>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <a href="signup">Signup</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
     <div className="LoginContainer">
       <div className="form-container">
       <form onSubmit={handleSubmit} className="form-style">
@@ -19,8 +66,8 @@ function Login() {
           type="email"
           id="email"
           name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          value={credentials.email}
+          onChange={e => setCredentials({ ...credentials, email: e.target.value })}
         />
         <br />
         <br />
@@ -29,13 +76,14 @@ function Login() {
           type="password"
           id="password"
           name="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          value={credentials.password}
+          onChange={e => setCredentials({ ...credentials, password: e.target.value })}
         />
         <br />
         <br />
         <input type="submit" value="Login" className="submit-button" />
       </form>
+    </div>
     </div>
     </div>
   );
