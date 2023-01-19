@@ -6,7 +6,14 @@ function Navbar() {
 
 const { currentUser } = useContext(CurrentUserContext)
 
-    const navigate = useNavigate    
+    const navigate = useNavigate  
+    
+   
+    function logout() {
+        currentUser(null);
+        localStorage.removeItem('token');
+        navigate(`/login`);
+    }
 
     let loginActions = (
         <>
@@ -25,9 +32,16 @@ const { currentUser } = useContext(CurrentUserContext)
 
     if (currentUser) {
         loginActions = (
+            <>
             <li style={{ float: 'right' }}>
                 Logged in as {currentUser.firstName} {currentUser.lastName}
             </li>
+            <li style={{ float: 'right' }}>
+                <a href="/login" onClick={logout} >
+                    Logout
+                </a>  
+            </li>
+           </>
         )
     }
     return(
