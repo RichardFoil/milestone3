@@ -34,7 +34,6 @@ function SignUp() {
 
   return (
     <div className='container'>
-      <h1 className='Header'>Welcome to our BarCrawl App</h1>
     <div className="SignupContainer">
       <div className="form-container">
       <form onSubmit={handleSubmit} className="form-style">

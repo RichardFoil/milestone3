@@ -17,9 +17,7 @@ function Home() {
 
     return (
     <div className='container'>
-      <h1 className='Header'>Welcome to our BarCrawl App</h1>
-      
-       
+            
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
       </div>
