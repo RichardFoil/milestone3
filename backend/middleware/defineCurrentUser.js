@@ -1,18 +1,26 @@
-const jwt = require('jsonwebtoken');
+const db = require("../models")
+const jwt = require('json-web-token')
 
-function defineCurrentUser(req, res, next) {
-  const token = req.headers['authorization'];
-  if (!token) {
-    return res.status(401).json({ message: 'Token is not provided' });
-  }
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    return res.status(401).json({ message: 'Token is invalid' });
-  }
+const { User } = db;
+
+async function defineCurrentUser(req, res, next){
+    try {
+        const [ method, token ] = req.headers.authorization.split(' ')
+        if(method == 'Bearer'){
+            const result = await jwt.decode('NPiSf1lX912i', token)
+            const { id } = result.value
+            let user = await User.findOne({ 
+                where: {
+                    id: id
+                }
+            })
+            req.currentUser = user
+        }
+        next()
+    } catch(err){
+        req.currentUser = null
+        next() 
+    }
 }
 
-module.exports = defineCurrentUser;
-
+module.exports = defineCurrentUser
