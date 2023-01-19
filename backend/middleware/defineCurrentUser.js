@@ -14,7 +14,5 @@ function defineCurrentUser(req, res, next) {
   }
 }
 
-module.exports = {
-    defineCurrentUser,
-};
+module.exports = defineCurrentUser;
 

@@ -18,44 +18,27 @@ function Home() {
     return (
     <div className='container'>
       <h1 className='Header'>Welcome to our BarCrawl App</h1>
-      <div className='NavbarContainer'>
-      <nav className='Navbar'>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/#">About</a>
-          </li>
-          <li>
-            <a href="/login">Login</a>
-          </li>
-          <li>
-            <a href="/signup">Signup</a>
-          </li>
-        </ul>
-      </nav>
-      </div>
+      
       <div className='SearchbarContainer'> 
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
         </div>
-         <div className="contentContainer">    
+            
          {breweries.length > 0 && 
           <div className='card-container'>
           {breweries.map((brewery, index) => (
             <div className="card" key={index}>
               <h2>{brewery.name}</h2>
               <h3>{brewery.brewery_type}</h3>
-              <p>{brewery.street}
-              {brewery.city}
-              {brewery.state}</p>
+              <p>{brewery.street} -
+                {brewery.city}- 
+                {brewery.state}</p>
               <p>{brewery.phone}</p>
               <a href={brewery.website_url}>{brewery.website_url}</a>
             </div>
           ))}
           </div>} 
-        </div>
+        
                   
         </div>
     </div>

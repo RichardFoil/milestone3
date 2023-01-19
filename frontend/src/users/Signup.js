@@ -35,24 +35,6 @@ function SignUp() {
   return (
     <div className='container'>
       <h1 className='Header'>Welcome to our BarCrawl App</h1>
-      <div className='NavbarContainer'>
-      <nav className='Navbar'>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/#">About</a>
-          </li>
-          <li>
-            <a href="/login">Login</a>
-          </li>
-          <li>
-            <a href="signup">Signup</a>
-          </li>
-        </ul>
-      </nav>
-      </div>
     <div className="SignupContainer">
       <div className="form-container">
       <form onSubmit={handleSubmit} className="form-style">
