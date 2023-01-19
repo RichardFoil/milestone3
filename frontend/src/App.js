@@ -14,18 +14,16 @@ function App() {
     <CurrentUserProvider>
         <div className="App">
             <div className="background_image">
-              
-                <>
+              <>
                   <BrowserRouter>
-                    <Navbar>
+                  <Navbar></Navbar>
                     <Routes>
                       <Route path="/" element={<Home />} />
                       <Route path="/login" element={<Login />} />
                       <Route path="/signup" element={<Signup />}/>
                     </Routes>
-                    </Navbar>
                   </BrowserRouter>
-                </>
+              </>
               </div>
             </div>
     </CurrentUserProvider>

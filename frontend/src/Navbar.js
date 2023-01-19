@@ -16,7 +16,7 @@ const { currentUser } = useContext(CurrentUserContext)
                 </a>
             </li>
             <li style={{ float: 'right' }}>
-                <a href="/singup" onClick={() => navigate("/signup")}>
+                <a href="/signup" onClick={() => navigate("/signup")}>
                     Signup
                 </a>
             </li>
