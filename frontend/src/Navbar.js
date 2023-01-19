@@ -4,13 +4,11 @@ import { CurrentUserContext } from './contexts/CurrentUser';
 
 function Navbar() {
 
-const { currentUser } = useContext(CurrentUserContext)
-
+    const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
     const navigate = useNavigate  
     
-   
     function logout() {
-        currentUser(null);
+        setCurrentUser(null);
         localStorage.removeItem('token');
         navigate(`/login`);
     }
