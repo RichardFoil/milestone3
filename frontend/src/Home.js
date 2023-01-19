@@ -19,7 +19,7 @@ function Home() {
     <div className='container'>
       <h1 className='Header'>Welcome to our BarCrawl App</h1>
       
-      <div className='SearchbarContainer'> 
+       
       <div className="Searchbar">
         <SearchBar onSearch={handleSearch} />
       </div>
@@ -42,7 +42,7 @@ function Home() {
         </div>
                   
         </div>
-    </div>
+    
     
     
   );
