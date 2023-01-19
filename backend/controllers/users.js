@@ -5,7 +5,7 @@ const db = require('../models');
 const { User } = db;
 
 
-router.post('/users', async (req, res) => {
+router.post('/', async (req, res) => {
 
     try {
         const { password, ...userData } = req.body;
@@ -16,6 +16,7 @@ router.post('/users', async (req, res) => {
         console.error(error);
         res.status(500).json({ message: 'Error creating user' });
     }
+    console.log("user route")
 });
  
 router.get('/users', async (req, res) => {

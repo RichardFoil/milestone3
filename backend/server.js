@@ -15,10 +15,11 @@ app.use(bodyParser.json())
 app.use(defineCurrentUser);
 
 // Controllers & Routes
-app.get(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
 const usersRouter = require('./controllers/users');
-app.get('/users', usersRouter);
-app.get('/authentication', require('./controllers/authentication'));
+app.use('/users', usersRouter);
+app.use('/authentication', require('./controllers/authentication'));
+console.log("server")
 
 
 // Listen for Connections
