@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from "./SearchBar";
 import { searchBreweriesByZip } from "./Api";
+import BreweryCard from "./BreweryCard";
 
 function Home() {
   const [breweries, setBreweries] = useState([]);
@@ -16,34 +17,21 @@ function Home() {
     
 
     return (
-    <div className='container'>
-            
-      <div className="Searchbar">
-        <SearchBar onSearch={handleSearch} />
-      </div>
-        <div className='resultsContainer'>
-         {breweries.length > 0 && 
-          <div className='card-container'>
-          {breweries.map((brewery, index) => (
-            <div className="card" key={index}>
-              <h2>{brewery.name}</h2>
-              <h3>{brewery.brewery_type}</h3>
-              <p>{brewery.street} -
-                {brewery.city}- 
-                {brewery.state}</p>
-              <p>{brewery.phone}</p>
-              <a href={brewery.website_url}>{brewery.website_url}</a>
+      <div className="container">
+        <div className="Searchbar">
+           <SearchBar onSearch={handleSearch} />
+        </div>
+        <div className="resultsContainer">
+          {breweries.length > 0 && (
+            <div className="card-container">
+              {breweries.map((brewery, index) => (
+                <BreweryCard key={index} brewery={brewery} />
+              ))}
             </div>
-          ))}
-          </div>
-          } 
+          )}
         </div>
-                  
-        </div>
-    
-    
-    
-  );
-}
+      </div>
+    );
+  }
 
 export default Home;
