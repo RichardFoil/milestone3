@@ -7,13 +7,22 @@ function Home() {
   const [breweries, setBreweries] = useState([]);
   console.log("Breweries:", breweries);
 
-    function handleSearch(zipcode) {
-      searchBreweriesByZip(zipcode)
-        .then(data => {
-          console.log("Search Results: ", data);
-          setBreweries(data.slice(0,5));
-        });
-    }
+  function handleSearch(zipcode) {
+    searchBreweriesByZip(zipcode)
+      .then(data => {
+        console.log("Search Results: ", data);
+        setBreweries(data.slice(0,5));
+        data.slice(0,5).forEach((brewery) => {
+          fetch('http://localhost:5000/breweries', {
+            method: 'POST',
+            body: JSON.stringify(brewery),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+        })
+      });
+  }
     
 
     return (

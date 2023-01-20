@@ -11,8 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(User, breweries) {
-      comments_ratings.belongsTo(breweries, {as: 'brewery_id', foreignKey:'id'})
-      comments_ratings.belongsTo(User, {as: 'user_id', foreignKey: 'id' })
+      
     }
   }
   comments_ratings.init({

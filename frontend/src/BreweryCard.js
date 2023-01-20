@@ -6,8 +6,7 @@ function BreweryCard({ brewery }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // send request to server with the breweryId, rating, and comment
-    // update the state to show that the rating and comment have been submitted
+    
   }
 
   return (
