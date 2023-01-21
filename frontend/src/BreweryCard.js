@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
+
 function BreweryCard({ brewery }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  
 
   function handleSubmit(e) {
     e.preventDefault();
-    
   }
 
   return (
