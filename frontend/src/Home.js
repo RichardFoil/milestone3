@@ -20,11 +20,16 @@ function Home() {
               'Content-Type': 'application/json'
             }
           })
+          .then(res => res.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
         })
       });
   }
-    
-
     return (
       <div className="container">
         <div className="Searchbar">

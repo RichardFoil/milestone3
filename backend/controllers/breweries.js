@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const { breweries } = require('../models');
+const db = require('../models')
+const {Brewery} = db;
+
+
 
 // Get all breweries
 router.get('/', async (req, res) => {
   try {
-    const allBreweries = await breweries.findAll();
+    const allBreweries = await Brewery.findAll();
     res.json({
-      breweries: allBreweries
+      Brewery: allBreweries
     });
   } catch (err) {
     res.status(500).json({
@@ -20,7 +23,7 @@ router.get('/', async (req, res) => {
 // Get a specific brewery by id
 router.get('/:id', async (req, res) => {
   try {
-    const brewery = await breweries.findByPk(req.params.id);
+    const brewery = await Brewery.findByPk(req.params.id);
     if (!brewery) {
       res.status(404).json({
         message: 'Brewery not found'
@@ -40,6 +43,7 @@ router.get('/:id', async (req, res) => {
 
 // Create a new brewery
 router.post('/', async (req, res) => {
+  console.log("Request Body:", req.body) // Log the request body to the console
   try {
     const newBreweryData = {
       id: req.body.id,
@@ -51,17 +55,21 @@ router.post('/', async (req, res) => {
       phone: req.body.phone,
       website_url: req.body.website_url,
     };
-    const newBrewery = await breweries.create(newBreweryData);
+    console.log("New Brewery Data:", newBreweryData) // Log the new brewery data to the console
+    const newBrewery = await Brewery.create(newBreweryData);
+    console.log("New Brewery:", newBrewery) // Log the new brewery to the console
     res.json({
-      brewery: newBrewery
+      Brewery: newBrewery
     });
   } catch (err) {
+    console.error("Error:", err) // Log the error to the console
     res.status(500).json({
       message: 'Error creating brewery',
       error: err
     });
   }
 });
+
 
   
 module.exports = router;
