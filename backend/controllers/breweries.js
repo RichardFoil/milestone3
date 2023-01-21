@@ -56,11 +56,24 @@ router.post('/', async (req, res) => {
       website_url: req.body.website_url,
     };
     console.log("New Brewery Data:", newBreweryData) // Log the new brewery data to the console
-    const newBrewery = await Brewery.create(newBreweryData);
-    console.log("New Brewery:", newBrewery) // Log the new brewery to the console
-    res.json({
-      Brewery: newBrewery
+
+    const existingBrewery = await Brewery.findOne({
+      where: {
+        id: newBreweryData.id
+      }
     });
+
+    if (existingBrewery) {
+      res.status(409).json({
+        message: 'Brewery already exists'
+      });
+    } else {
+      const newBrewery = await Brewery.create(newBreweryData);
+      console.log("New Brewery:", newBrewery) // Log the new brewery to the console
+      res.json({
+        Brewery: newBrewery
+      });
+    }
   } catch (err) {
     console.error("Error:", err) // Log the error to the console
     res.status(500).json({
@@ -69,6 +82,7 @@ router.post('/', async (req, res) => {
     });
   }
 });
+
 
 
   
