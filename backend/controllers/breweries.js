@@ -41,7 +41,17 @@ router.get('/:id', async (req, res) => {
 // Create a new brewery
 router.post('/', async (req, res) => {
   try {
-    const newBrewery = await breweries.create(req.body);
+    const newBreweryData = {
+      id: req.body.id,
+      name: req.body.name,
+      brewery_type: req.body.brewery_type,
+      street: req.body.street,
+      city: req.body.city,
+      state: req.body.state,
+      phone: req.body.phone,
+      website_url: req.body.website_url,
+    };
+    const newBrewery = await breweries.create(newBreweryData);
     res.json({
       brewery: newBrewery
     });
@@ -52,5 +62,6 @@ router.post('/', async (req, res) => {
     });
   }
 });
+
   
 module.exports = router;
