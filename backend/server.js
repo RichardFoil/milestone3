@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: true }))
 const usersRouter = require('./controllers/users');
 app.use('/users', usersRouter);
 app.use('/authentication', require('./controllers/authentication'));
+app.use('/breweries', require('./controllers/breweries'));
+
 console.log("server")
 
 
