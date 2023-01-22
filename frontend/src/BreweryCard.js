@@ -4,8 +4,8 @@ import { CurrentUserContext } from './contexts/CurrentUser'
 function BreweryCard({ brewery }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
-  const { user } = useContext(CurrentUserContext);
-  const user_id = user ? user.id : null;
+  const { user } = useContext(CurrentUserContext); // getting the current user from the context
+  const user_id = user ? user.id : null; // getting the user_id from the user object
   const [Brewery_id, setBreweryId] = useState(brewery.id);
   useEffect(() => {
     setBreweryId(brewery.id);
@@ -16,7 +16,7 @@ function BreweryCard({ brewery }) {
       const data = {
         rating: rating,
         comment: comment,
-        user_id: user_id,
+        user_id: user_id, // passing the user_id to the data object
         Brewery_id: Brewery_id
     }
 

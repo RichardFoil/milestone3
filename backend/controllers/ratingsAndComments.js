@@ -5,6 +5,7 @@ const { RatingsAndComments } = db;
 
 // Create a new rating and comment
 router.post('/', async (req, res) => {
+    console.log(req.body.user_id)
   try {
     const newRatingCommentData = {
       Rating: req.body.rating,
