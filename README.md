@@ -13,8 +13,9 @@ This project is a web application built using React.js, Node.js, and PGadmin. Th
 ## Installation and Running
 
 1. Clone the repository: `git clone https://github.com/RichardFoil/milestone3.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+2. Install dependencies: `npm install` in the frontend and the backend folders
+3. cd into the backend folder and start the server with nodemond server.js, You should be listening on port 5000
+4  cd in to the frontend folder in a differenet terminal and run npm start, this should bring up the website at localhost:3000
 
 ## Usage
 
@@ -22,7 +23,9 @@ This app can be used to search for and explore breweries. Users can sign up and 
 
 - `/signup`: Sign up page for new users.
 - `/login`: Login page for existing users.
-- `/About`: Explains App how it works and its inspiration.
+
+- '5000/users': get all information about the users that were passed to the database 
+- `5000/breweries': get all information about the breweries that were passed to the database
 
 
 ## Deployment
