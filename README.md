@@ -30,7 +30,7 @@ This app can be used to search for and explore breweries. Users can sign up and 
 
 ## Deployment
 
-##Known Bugs/Issues
+##  Known Bugs/Issues
 -the ratings and comment form gets submitted to the backend database but dosent re-populate the card when the same zip code is searched
 -the rating and comment when the form gets submitted sticks to the card even if you change the zipcode
 
