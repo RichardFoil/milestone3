@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SearchBar from "./SearchBar";
 import { searchBreweriesByZip } from "./Api";
 import BreweryCard from "./BreweryCard";
+import  CurrentUserProvider from './contexts/CurrentUser'
+
 
 function Home() {
   const [breweries, setBreweries] = useState([]);
@@ -39,7 +41,9 @@ function Home() {
           {breweries.length > 0 && (
             <div className="card-container">
               {breweries.map((brewery, index) => (
+                <CurrentUserProvider>
                 <BreweryCard key={index} brewery={brewery} />
+                </CurrentUserProvider>
               ))}
             </div>
           )}
