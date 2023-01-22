@@ -38,6 +38,10 @@ This app can be used to search for and explore breweries. Users can sign up and 
 - the only 5000 route that works is /breweries.  the other  routes work because the information is being passed to the database but i can't properly get the routes
 
 
+## Future
+- I would like to add a profile so that when a user is signed in they can go to their profile and look at all the breweries they've rated and commented on.
+- Adding a feature where you can find the highest rated brewery
+
 ## Contributing
 
 We welcome contributions to this project. If you would like to contribute, please fork the repository and make a pull request with your changes.
