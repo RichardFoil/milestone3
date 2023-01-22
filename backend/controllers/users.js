@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     console.log("user route")
 });
  
-router.get('/users', async (req, res) => {
+router.get('/', async (req, res) => {
     console.log("haha")
     const users = await User.findAll()
     res.json(users)
