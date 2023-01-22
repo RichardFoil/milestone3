@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
       rating: req.body.rating,
       comment: req.body.comment,
       user_id: req.body.user_id,
-      brewery_id: req.body.brewery_id
+      Brewery_id: req.body.Brewery_id
     };
     const newRatingComment = await RatingsAndComments.create(newRatingCommentData);
     res.json({
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
 router.get('/:brewery_id', async (req, res) => {
   try {
     const ratingsComments = await RatingsAndComments.findAll({
-      where: { brewery_id: req.params.brewery_id }
+      where: { Brewery_id: req.params.brewery_id }
     });
     if (!ratingsComments) {
       res.status(404).json({
