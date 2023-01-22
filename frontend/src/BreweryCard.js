@@ -1,15 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CurrentUserContext } from './contexts/CurrentUser'
 
-
 function BreweryCard({ brewery }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const { user } = useContext(CurrentUserContext);
   const user_id = user ? user.id : null;
-  const [Brewery_id, setBreweryId] = useState(brewery._id);
+  const [Brewery_id, setBreweryId] = useState(brewery.id);
   useEffect(() => {
-    setBreweryId(brewery._id);
+    setBreweryId(brewery.id);
   }, [brewery]);
 
   function handleSubmit(e) {
