@@ -50,6 +50,7 @@ function BreweryCard({ brewery }) {
       <p>Located at: {brewery.street} - {brewery.city} - {brewery.state}</p>
       <p>Phone: {brewery.phone}</p>
       <a href={brewery.website_url}>{brewery.website_url}</a>
+      {currentUser ? (
       <form onSubmit={handleSubmit}>
       <input type="hidden" name="Brewery_id" value={Brewery_id} />
         <label>
@@ -75,6 +76,9 @@ function BreweryCard({ brewery }) {
         <br />
         <button type="submit">Submit</button>
       </form>
+      ) : (
+        <p>You must be logged in to view the form.</p>
+      )}
     </div>
   );
 }
