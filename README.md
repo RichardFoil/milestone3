@@ -12,10 +12,10 @@ This project is a web application built using React.js, Node.js, and PGadmin. Th
 
 ## Installation and Running
 
-1. Clone the repository: `git clone https://github.com/RichardFoil/milestone3.git`
-2. Install dependencies: `npm install` in the frontend and the backend folders
-3. cd into the backend folder and start the server with nodemond server.js, You should be listening on port 5000
-4  cd in to the frontend folder in a differenet terminal and run npm start, this should bring up the website at localhost:3000
+1. Clone the repository: `git clone https://github.com/RichardFoil/milestone3.git`.
+2. Install dependencies: `npm install` in the frontend and the backend folders.
+3. cd into the backend folder and start the server with nodemond server.js, You should be listening on port 5000.
+4.  cd in to the frontend folder in a differenet terminal and run npm start, this should bring up the website at localhost:3000
 
 ## Usage
 
