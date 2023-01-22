@@ -12,10 +12,10 @@ This project is a web application built using React.js, Node.js, and PGadmin. Th
 
 ## Installation and Running
 
-1. Clone the repository: `git clone https://github.com/RichardFoil/milestone3.git`
-2. Install dependencies: `npm install` in the frontend and the backend folders
-3. cd into the backend folder and start the server with nodemond server.js, You should be listening on port 5000
-4  cd in to the frontend folder in a differenet terminal and run npm start, this should bring up the website at localhost:3000
+1. Clone the repository: `git clone https://github.com/RichardFoil/milestone3.git`.
+2. Install dependencies: `npm install` in the frontend and the backend folders.
+3. cd into the backend folder and start the server with nodemond server.js, You should be listening on port 5000.
+4.  cd in to the frontend folder in a differenet terminal and run npm start, this should bring up the website at localhost:3000
 
 ## Usage
 
@@ -31,12 +31,16 @@ This app can be used to search for and explore breweries. Users can sign up and 
 ## Deployment
 
 ##  Known Bugs/Issues
--the ratings and comment form gets submitted to the backend database but dosent re-populate the card when the same zip code is searched.
+- the ratings and comment form gets submitted to the backend database but dosent re-populate the card when the same zip code is searched.
 
--the rating and comment when the form gets submitted sticks to the card even if you change the zipcode.
+- the rating and comment when the form gets submitted sticks to the card even if you change the zipcode.
 
--the only 5000 route that works is /breweries.  the other two routes work because the information is being passed to the database but i can't properly get the routes
+- the only 5000 route that works is /breweries.  the other  routes work because the information is being passed to the database but i can't properly get the routes
 
+
+## Future
+- I would like to add a profile so that when a user is signed in they can go to their profile and look at all the breweries they've rated and commented on.
+- Adding a feature where you can find the highest rated brewery
 
 ## Contributing
 
