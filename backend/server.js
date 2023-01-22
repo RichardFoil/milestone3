@@ -25,7 +25,7 @@ app.use('/ratingsAndcomments', require('./controllers/ratingsAndcomments'));
 
 console.log("server")
 
-app.use(express.static(path.join(__dirname, 'favorite-recipes', 'build')))
+app.use(express.static(path.join(__dirname, 'frontend', 'build')))
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
