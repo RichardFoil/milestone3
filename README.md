@@ -35,7 +35,7 @@ This app can be used to search for and explore breweries. Users can sign up and 
 
 -the rating and comment when the form gets submitted sticks to the card even if you change the zipcode.
 
--the only 5000 route that works is /breweries.  the other two routes work because the information is being passed to the database but i can't properly get the routes
+-the only 5000 route that works is /breweries.  the other  routes work because the information is being passed to the database but i can't properly get the routes
 
 
 ## Contributing
