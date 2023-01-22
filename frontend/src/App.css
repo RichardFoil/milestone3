@@ -129,3 +129,28 @@
 
 }
 
+/* Media query for devices smaller than 600px */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+  .form-container {
+    padding: 1em;
+  }
+  .submit-button {
+    font-size: 0.8em;
+  }
+  
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .resultsContainer {
+    overflow-y: scroll;
+    height: auto;
+    max-height: 50vh;
+  }
+  .background_image {
+    background-size: 100% 100%;
+  }
+}
