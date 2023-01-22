@@ -7,8 +7,8 @@ const { RatingsAndComments } = db;
 router.post('/', async (req, res) => {
   try {
     const newRatingCommentData = {
-      rating: req.body.rating,
-      comment: req.body.comment,
+      Rating: req.body.rating,
+      Comment: req.body.comment,
       user_id: req.body.user_id,
       Brewery_id: req.body.Brewery_id
     };
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
 router.get('/:brewery_id', async (req, res) => {
   try {
     const ratingsComments = await RatingsAndComments.findAll({
-      where: { Brewery_id: req.params.brewery_id }
+      where: { Brewery_id: req.params.Brewery_id }
     });
     if (!ratingsComments) {
       res.status(404).json({
