@@ -20,6 +20,7 @@ const usersRouter = require('./controllers/users');
 app.use('/users', usersRouter);
 app.use('/authentication', require('./controllers/authentication'));
 app.use('/breweries', require('./controllers/breweries'));
+app.use('/ratingsAndcomments', require('./controllers/ratingsAndcomments'));
 
 console.log("server")
 

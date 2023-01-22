@@ -1,14 +1,41 @@
-import React, { useState } from 'react';
-
+import React, { useContext, useState, useEffect } from 'react';
+import { CurrentUserContext } from './contexts/CurrentUser'
 
 function BreweryCard({ brewery }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
-  
+  const { user } = useContext(CurrentUserContext); // getting the current user from the context
+  const user_id = user ? user.id : null; // getting the user_id from the user object
+  const [Brewery_id, setBreweryId] = useState(brewery.id);
+  useEffect(() => {
+    setBreweryId(brewery.id);
+  }, [brewery]);
 
   function handleSubmit(e) {
     e.preventDefault();
-  }
+      const data = {
+        rating: rating,
+        comment: comment,
+        user_id: user_id, // passing the user_id to the data object
+        Brewery_id: Brewery_id
+    }
+
+    fetch('http://localhost:5000/ratingsAndcomments', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
+
+  
 
   return (
     <div className="card">
@@ -18,6 +45,7 @@ function BreweryCard({ brewery }) {
       <p>Phone: {brewery.phone}</p>
       <a href={brewery.website_url}>{brewery.website_url}</a>
       <form onSubmit={handleSubmit}>
+      <input type="hidden" name="Brewery_id" value={Brewery_id} />
         <label>
           Rating:
           <input
@@ -26,6 +54,7 @@ function BreweryCard({ brewery }) {
             max="5"
             value={rating}
             onChange={(e) => setRating(e.target.value)}
+            name="rating"
           />
         </label>
         <br />
@@ -34,6 +63,7 @@ function BreweryCard({ brewery }) {
           <textarea
             value={comment}
             onChange={(e) => setComment(e.target.value)}
+            name="comment"
           />
         </label>
         <br />
