@@ -4,12 +4,18 @@ import { CurrentUserContext } from './contexts/CurrentUser'
 function BreweryCard({ brewery }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
-  const { user } = useContext(CurrentUserContext); // getting the current user from the context
-  const user_id = user ? user.id : null; // getting the user_id from the user object
+  const { currentUser } = useContext(CurrentUserContext); // getting the current user from the context
+  const [user_id, setUserId] = useState(null); // getting the user_id from the user object
   const [Brewery_id, setBreweryId] = useState(brewery.id);
   useEffect(() => {
     setBreweryId(brewery.id);
   }, [brewery]);
+  useEffect(() => {
+    if(currentUser) {
+      setUserId(currentUser.id);
+    }
+  }, [currentUser]);
+  
 
   function handleSubmit(e) {
     e.preventDefault();

@@ -4,7 +4,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const app = express();
-const defineCurrentUser = require('./middleware/defineCurrentUser')
+const defineCurrentUser = require('./middleware/defineCurrentUser');
+const path = require('path')
 
 
 // Express Settings
@@ -24,6 +25,7 @@ app.use('/ratingsAndcomments', require('./controllers/ratingsAndcomments'));
 
 console.log("server")
 
+app.use(express.static(path.join(__dirname, 'favorite-recipes', 'build')))
 
 // Listen for Connections
 app.listen(process.env.PORT, () => {
